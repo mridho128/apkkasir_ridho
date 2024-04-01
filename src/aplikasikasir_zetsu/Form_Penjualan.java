@@ -298,6 +298,8 @@ String harga, idproduk, idprodukpenjualan, iddetail, jam, tanggal,sub_total;
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("ID Penjualan");
 
+        txtidPenjualan.setEnabled(false);
+
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("Data Penjualan");
 
@@ -332,11 +334,15 @@ String harga, idproduk, idprodukpenjualan, iddetail, jam, tanggal,sub_total;
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Total");
 
+        txtTotal.setEnabled(false);
+
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setText("Buy");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setText("Return");
+
+        txtKembalian.setEnabled(false);
 
         btnBayar.setBackground(new java.awt.Color(204, 204, 204));
         btnBayar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -357,6 +363,10 @@ String harga, idproduk, idprodukpenjualan, iddetail, jam, tanggal,sub_total;
                 btnKembaliActionPerformed(evt);
             }
         });
+
+        txtJam.setEnabled(false);
+
+        txtTanggal.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

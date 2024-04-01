@@ -217,6 +217,11 @@ ResultSet rst;
         btnExit.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-exit3-20.png"))); // NOI18N
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         tblpelanggan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -285,19 +290,16 @@ ResultSet rst;
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
 try {
-      String idplgn = txtid.getText();
-      String nmaplgn = txtnm.getText();
-      String alamat = txtAlamat.getText();
-      String no = txtNo.getText();
-      String sql = "Update Pelanggan set NamaPelanggan='"+nmaplgn+"' Alamat='"+alamat+"', NomorTelepon'"+no+"', where PelangganId='"+idplgn+"'";
-      pst = koneksi.prepareStatement(sql);
-      pst.execute();
-      JOptionPane.showMessageDialog(null, "Data Berhasil Di Update");
-    }catch (Exception e) {
-           JOptionPane.showMessageDialog(null, e);
-    }
-    tampildata();
-    clear();
+    String sql = "delete from pelanggan where PelangganID=?";
+    pst = koneksi.prepareStatement(sql);
+    pst.setString(1, txtid.getText());
+    pst.execute();
+    JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(null, "Data Gagal Dihapus");
+}
+tampildata();
+clear();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -348,6 +350,10 @@ try {
 }
         // TODO add your handling code here:
     }//GEN-LAST:event_tblpelangganMouseClicked
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments

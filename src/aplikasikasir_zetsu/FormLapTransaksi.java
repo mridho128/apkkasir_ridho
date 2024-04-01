@@ -37,10 +37,10 @@ String tanggal,tanggal2,sql;
 
         sblmTgl = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
-        btnCari = new javax.swing.JButton();
+        btncari1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         DariTgl = new com.toedter.calendar.JDateChooser();
-        jButton2 = new javax.swing.JButton();
+        btncari2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         SetelahTgl = new com.toedter.calendar.JDateChooser();
         jButton3 = new javax.swing.JButton();
@@ -57,29 +57,29 @@ String tanggal,tanggal2,sql;
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Sebelum Tanggal");
 
-        btnCari.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnCari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-search-20 (2).png"))); // NOI18N
-        btnCari.setText("Cari");
-        btnCari.addActionListener(new java.awt.event.ActionListener() {
+        btncari1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncari1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-search-20 (2).png"))); // NOI18N
+        btncari1.setText("Cari");
+        btncari1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCariActionPerformed(evt);
+                btncari1ActionPerformed(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Diantara Tanggal");
 
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-search-20 (3).png"))); // NOI18N
-        jButton2.setText("Cari");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btncari2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btncari2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/icons8-search-20 (3).png"))); // NOI18N
+        btncari2.setText("Cari");
+        btncari2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btncari2MouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btncari2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btncari2ActionPerformed(evt);
             }
         });
 
@@ -157,8 +157,8 @@ String tanggal,tanggal2,sql;
                         .addGap(112, 112, 112)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3)
-                            .addComponent(jButton2)
-                            .addComponent(btnCari)
+                            .addComponent(btncari2)
+                            .addComponent(btncari1)
                             .addComponent(sblmTgl, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                             .addComponent(DariTgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(SetelahTgl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -185,7 +185,7 @@ String tanggal,tanggal2,sql;
                     .addComponent(jLabel1)
                     .addComponent(sblmTgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCari)
+                .addComponent(btncari1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(DariTgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,7 +193,7 @@ String tanggal,tanggal2,sql;
                     .addComponent(SampaiTgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btncari2)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(SetelahTgl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,11 +212,11 @@ String tanggal,tanggal2,sql;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+    private void btncari1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncari1ActionPerformed
    try {
        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
        tanggal = format.format(sblmTgl.getDate());
-       sql = "select * from tbl_penjualan where TanggalPenjualan <'"+tanggal+"'";
+       sql = "select * from penjualan where TanggalPenjualan <'"+tanggal+"'";
        pst = konek.prepareStatement(sql);
        rst = pst.executeQuery();
        tblLapTransaksi.setModel(DbUtils.resultSetToTableModel(rst));
@@ -225,13 +225,13 @@ String tanggal,tanggal2,sql;
    }
        
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCariActionPerformed
+    }//GEN-LAST:event_btncari1ActionPerformed
 
     private void tblLapTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLapTransaksiMouseClicked
    try {
        int row = tblLapTransaksi.getSelectedRow();
        String tabelKlik = (tblLapTransaksi.getModel().getValueAt(row, 1).toString());
-       String sql = "select * from tbl_detailpenjualan where DetailID=?";
+       String sql = "select * from detailpenjualan where DetailID=?";
        pst = konek.prepareStatement(sql);
        pst.setString(1,tabelKlik);
        rst = pst.executeQuery();
@@ -242,12 +242,12 @@ String tanggal,tanggal2,sql;
         // TODO add your handling code here:
     }//GEN-LAST:event_tblLapTransaksiMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btncari2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncari2ActionPerformed
     try {
        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
        tanggal = format.format(DariTgl.getDate());
        tanggal = format.format(SampaiTgl.getDate());
-       sql = "select * from tbl_penjualan where TanggalPenjualan between '"+tanggal+"' and '"+tanggal+"'";
+       sql = "select * from penjualan where TanggalPenjualan between '"+tanggal+"' and '"+tanggal+"'";
        pst = konek.prepareStatement(sql);
        rst = pst.executeQuery();
        tblLapTransaksi.setModel(DbUtils.resultSetToTableModel(rst));
@@ -255,11 +255,11 @@ String tanggal,tanggal2,sql;
        JOptionPane.showMessageDialog(null,"Data Tidak Tampil");
    }  
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btncari2ActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btncari2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncari2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btncari2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
@@ -313,9 +313,9 @@ dispose();        // TODO add your handling code here:
     private com.toedter.calendar.JDateChooser DariTgl;
     private com.toedter.calendar.JDateChooser SampaiTgl;
     private com.toedter.calendar.JDateChooser SetelahTgl;
-    private javax.swing.JButton btnCari;
+    private javax.swing.JButton btncari1;
+    private javax.swing.JButton btncari2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

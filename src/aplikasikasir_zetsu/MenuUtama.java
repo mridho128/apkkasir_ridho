@@ -111,6 +111,7 @@ btnSale.setEnabled(false);
         report = new javax.swing.JMenu();
         RkpLprn = new javax.swing.JMenuItem();
         about = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -386,6 +387,15 @@ btnSale.setEnabled(false);
                 aboutActionPerformed(evt);
             }
         });
+
+        jMenuItem1.setText("help");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        about.add(jMenuItem1);
+
         jMenuBar1.add(about);
 
         setJMenuBar(jMenuBar1);
@@ -409,7 +419,7 @@ try {
     rst = pst.executeQuery();
     if (rst.next()) {
         if(txtUserName.getText().equals(rst.getString("Username"))&& txtPassword.getText().equals(rst.getString("Password"))&& cmbHakAkses.getSelectedItem().equals(rst.getString("HakAkses")))
-            if(cmbHakAkses.getSelectedItem().equals("Admin")){
+            if(cmbHakAkses.getSelectedItem().equals("- Admin")){
                     Register.setEnabled(true);
                     LogOut.setEnabled(true);
                     Master.setEnabled(true);
@@ -418,13 +428,15 @@ try {
                     Transaksi.setEnabled(true);
                     Master.setEnabled(true);
                     report.setEnabled(true);
-                    lbl.setVisible(false);
+                    FormLogin.setVisible(false);
                     btnRegister.setEnabled(true);
                     btnProduct.setEnabled(true);
+                    btnPelanggan.setEnabled(true);
+                    btnSale.setEnabled(true);
                     Customer.setEnabled(true);
                     txtJam.setEnabled(false);
                     txtTanggal.setEnabled(false);
-                } else if(cmbHakAkses.getSelectedItem().equals("Petugas")){
+                } else if(cmbHakAkses.getSelectedItem().equals("- Petugas")){
                     Register.setEnabled(false);
                     LogOut.setEnabled(true);
                     Master.setEnabled(true);
@@ -433,10 +445,11 @@ try {
                     Transaksi.setEnabled(true);
                     Master.setEnabled(true);
                     report.setEnabled(true);
-                    lbl.setVisible(false);
+                    FormLogin.setVisible(false);
                     btnRegister.setEnabled(false);
                     btnProduct.setEnabled(true);
                     btnPelanggan.setEnabled(true);
+                    btnSale.setEnabled(true);
                     txtJam.setEnabled(false);
                     txtTanggal.setEnabled(false);
                 }
@@ -460,7 +473,7 @@ try {
     }//GEN-LAST:event_btnMasukActionPerformed
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
-        // TODO add your handling code here:
+new Form_Produk().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnProductActionPerformed
 
     private void RkpLprnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RkpLprnActionPerformed
@@ -478,11 +491,11 @@ new FormLapTransaksi().setVisible(true);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnPelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPelangganActionPerformed
-        // TODO add your handling code here:
+new Form_Pelanggan().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnPelangganActionPerformed
 
     private void btnSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaleActionPerformed
-        // TODO add your handling code here:
+new Form_Penjualan().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnSaleActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
@@ -496,6 +509,10 @@ new FormLapTransaksi().setVisible(true);
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+new FormAbout().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,6 +571,7 @@ new FormLapTransaksi().setVisible(true);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

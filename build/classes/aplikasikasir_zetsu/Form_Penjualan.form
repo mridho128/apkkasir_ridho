@@ -322,6 +322,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtidPenjualan">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -381,6 +384,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTotal">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -401,6 +407,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtKembalian">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnBayar">
       <Properties>
@@ -437,8 +446,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtJam">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTanggal">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

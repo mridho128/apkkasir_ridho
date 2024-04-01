@@ -35,8 +35,8 @@
                       <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCari" min="-2" max="-2" attributes="0"/>
+                          <Component id="btncari2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btncari1" min="-2" max="-2" attributes="0"/>
                           <Component id="sblmTgl" pref="142" max="32767" attributes="0"/>
                           <Component id="DariTgl" alignment="0" max="32767" attributes="0"/>
                           <Component id="SetelahTgl" alignment="0" max="32767" attributes="0"/>
@@ -72,7 +72,7 @@
                   <Component id="sblmTgl" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnCari" min="-2" max="-2" attributes="0"/>
+              <Component id="btncari1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="DariTgl" min="-2" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="btncari2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="SetelahTgl" min="-2" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
         <Property name="text" type="java.lang.String" value="Sebelum Tanggal"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCari">
+    <Component class="javax.swing.JButton" name="btncari1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="18" style="1"/>
@@ -122,7 +122,7 @@
         <Property name="text" type="java.lang.String" value="Cari"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCariActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncari1ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -135,7 +135,7 @@
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="DariTgl">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btncari2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="18" style="1"/>
@@ -146,8 +146,8 @@
         <Property name="text" type="java.lang.String" value="Cari"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btncari2MouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncari2ActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
